@@ -1,0 +1,9 @@
+{
+  "name": "organizador-academico-desktop",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {"dev": "tauri dev", "build": "tauri build", "dev:frontend": "vite", "build:frontend": "vite build", "check": "node --check src/main.js"},
+  "dependencies": {"@tauri-apps/api": "^2.0.0", "@tauri-apps/plugin-dialog": "^2.0.0", "@tauri-apps/plugin-opener": "^2.0.0"},
+  "devDependencies": {"@tauri-apps/cli": "^2.0.0", "vite": "^6.0.0"}
+}

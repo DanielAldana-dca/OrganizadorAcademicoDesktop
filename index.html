@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101827" />
+  <title>Organizador Académico</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <header class="topbar glass">
+      <div class="brand-mark">OA</div>
+      <div class="brand-copy"><h1>Organizador Académico</h1><p>Tu espacio de estudio, organizado y local</p></div>
+      <div class="top-actions"><span class="offline-pill"><i></i> Modo local</span><button id="backupBtn" class="button button-quiet" title="Crear copia de seguridad">Exportar copia</button></div>
+    </header>
+    <main class="workspace">
+      <aside class="sidebar glass">
+        <div class="section-heading"><div><span class="eyebrow">BIBLIOTECA</span><h2>Mis asignaturas</h2></div><button id="addSubjectBtn" class="icon-button" aria-label="Nueva asignatura" title="Nueva asignatura">+</button></div>
+        <div class="search-wrap"><span>⌕</span><input id="subjectSearch" type="search" placeholder="Buscar asignatura…" /></div>
+        <div id="subjectList" class="subject-list"></div>
+        <div class="topic-section"><div class="topic-section-title">TEMAS DE LA ASIGNATURA</div><div id="topicList" class="topic-list"></div></div>
+        <div class="sidebar-footer"><button id="addTopicBtn" class="button button-secondary full-width">＋ Nuevo tema</button><p>Los datos se guardan en este equipo.</p></div>
+      </aside>
+      <section class="main-panel">
+        <div class="welcome-card glass" id="welcomeCard">
+          <div class="welcome-orb">✦</div><span class="eyebrow">PANEL DE ESTUDIO</span><h2>Un lugar para cada idea.</h2><p>Crea una asignatura y organiza sus temas, notas, documentos, vídeos, enlaces e imágenes.</p>
+          <button id="welcomeAddSubject" class="button button-primary">Crear primera asignatura</button>
+        </div>
+        <div id="contentView" class="content-view hidden">
+          <div class="content-heading glass"><div class="heading-icon">⌘</div><div class="heading-copy"><span id="breadcrumb" class="eyebrow">ASIGNATURA</span><h2 id="activeTitle">Selecciona un tema</h2><p id="activeSubtitle">Tu material de estudio aparecerá aquí.</p></div><div class="heading-actions"><button id="renameBtn" class="button button-quiet">Renombrar</button><button id="deleteBtn" class="button button-danger-quiet">Eliminar</button></div></div>
+          <div class="toolbar"><div id="tabs" class="tabs" role="tablist"><button class="tab active" data-kind="note">Notas</button><button class="tab" data-kind="document">Documentos</button><button class="tab" data-kind="video">Vídeos</button><button class="tab" data-kind="link">Enlaces</button><button class="tab" data-kind="image">Imágenes</button></div><button id="addResourceBtn" class="button button-primary">＋ Añadir contenido</button></div>
+          <div id="resourceGrid" class="resource-grid"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="statusbar"><span><i class="status-dot"></i> Base de datos local SQLite</span><span id="statusMessage">Listo</span></footer>
+  </div>
+  <dialog id="editorDialog" class="dialog glass"><form id="editorForm"><div class="dialog-header"><div><span class="eyebrow" id="dialogEyebrow">NUEVO ELEMENTO</span><h2 id="dialogTitle">Añadir contenido</h2></div><button type="button" class="icon-button close-dialog" aria-label="Cerrar">×</button></div><label id="titleLabel" for="itemTitle">Título</label><input id="itemTitle" name="title" maxlength="180" required placeholder="Escribe un título" /><div id="contentField" class="field-group"><label id="contentLabel" for="itemContent">Contenido</label><textarea id="itemContent" name="content" rows="7" placeholder="Escribe aquí…"></textarea></div><div id="pathField" class="field-group hidden"><label for="itemPath">Ruta del archivo</label><div class="path-row"><input id="itemPath" name="path" readonly placeholder="Selecciona un archivo" /><button type="button" id="chooseFileBtn" class="button button-secondary">Examinar</button></div><p class="field-help">El archivo permanece en su ubicación original. Solo se guarda su ruta.</p></div><div id="urlHint" class="field-help hidden">Se guardará la dirección y podrás abrirla cuando el recurso esté disponible.</div><div class="dialog-actions"><button type="button" class="button button-quiet close-dialog">Cancelar</button><button type="submit" class="button button-primary">Guardar</button></div></form></dialog>
+    <dialog id="nameDialog" class="dialog glass"><form id="nameForm"><div class="dialog-header"><div><span class="eyebrow" id="nameEyebrow">ORGANIZACIÓN</span><h2 id="nameTitle">Nueva asignatura</h2></div><button type="button" class="icon-button close-name-dialog" aria-label="Cerrar">×</button></div><label for="nameInput">Nombre</label><input id="nameInput" maxlength="120" required placeholder="Ej. Matemática" /><div class="dialog-actions"><button type="button" class="button button-quiet close-name-dialog">Cancelar</button><button type="submit" class="button button-primary">Guardar</button></div></form></dialog>
+    <script type="module" src="src/main.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Organizador Académico",
+  "version": "1.0.0",
+  "identifier": "com.organizadoracademico.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev:frontend",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build:frontend",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Organizador Académico",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 900,
+        "minHeight": 620,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "nsis",
+    "category": "Education",
+    "shortDescription": "Organiza tus materiales de estudio sin conexión",
+    "longDescription": "Aplicación local para asignaturas, temas, notas, documentos, vídeos, enlaces e imágenes."
+  }
+}
