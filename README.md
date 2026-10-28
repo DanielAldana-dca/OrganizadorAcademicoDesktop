@@ -45,3 +45,9 @@ Pulsa **Exportar copia** en la barra superior y selecciona dónde guardar la cop
 ## Notas de desarrollo
 
 Este proyecto crea una base de datos nueva con un esquema sencillo. Como los archivos originales enviados no incluían `app/database/db.py` ni la base de datos original, no se afirma que migre automáticamente los datos de la versión Python. La migración se podrá añadir cuando se conozca el esquema real anterior.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+Copyright (c) 2026 Daniel Collazo Aldana
